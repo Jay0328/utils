@@ -22,6 +22,11 @@
   "moduleRoots": [
     "src"
   ],
+  "scripts": {
+    "types:check": "tsc",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "test": "jest --coverage --config=jest.config.json"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.3",
@@ -42,6 +47,7 @@
     "rollup-plugin-typescript": "^1.0.0",
     "tslib": "^1.9.3",
     "tslint": "^5.13.0",
+    "tslint-react": "^3.6.0",
     "typescript": "^3.3.3333"
   }
 }
