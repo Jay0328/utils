@@ -1,5 +1,5 @@
 module.exports = api => {
-	const isES = api.env('es');
+	const test = api.env('test');
 	return {
 		presets: [
 			[
@@ -7,7 +7,7 @@ module.exports = api => {
 				{
 					loose: true,
 					useBuiltIns: 'entry',
-					modules: isES ? false : 'commonjs',
+					modules: test ? 'commonjs' : false,
 				},
 			],
 			'@babel/preset-typescript',

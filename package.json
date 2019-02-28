@@ -22,10 +22,19 @@
   "moduleRoots": [
     "src"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "types:check": "tsc",
+    "type:check": "tsc",
+    "type:declaration": "tsc --noEmit false --emitDeclarationOnly --declaration --declarationDir ./",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "test": "jest --coverage --config=jest.config.json"
+    "test": "BABEL_ENV=test jest --coverage --config=jest.config.json",
+    "build:remove": "node ./scripts/build.remove.js",
+    "prebuild": "npm run build:remove",
+    "build": "node ./scripts/build.js && npm run type:declaration",
+    "prepublish": "npm run build",
+    "postpublish": "npm run build:remove"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -43,8 +52,8 @@
     "cz-conventional-changelog": "^2.1.0",
     "jest": "^24.1.0",
     "rollup": "^1.2.3",
+    "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-node-resolve": "^4.0.1",
-    "rollup-plugin-typescript": "^1.0.0",
     "tslib": "^1.9.3",
     "tslint": "^5.13.0",
     "tslint-react": "^3.6.0",

@@ -2,12 +2,10 @@
 node_modules/
 
 # Else
-.editorconfig
-.travis.yml
-.eslintrc
-.eslintignore
-.prettierignore
-.prettierrc
-.travis.yml
-*.log
 coverage/
+scripts/
+babel.config.js
+jest.config.json
+tsconfig.json
+tslint.json
+*.log
