@@ -1,0 +1,24 @@
+before_script:
+- pwd
+- which nodejs
+- nodejs -v
+- which npm
+- npm -v
+- which yarn
+- yarn --version
+
+# jobs sequense pipeline
+stages:
+- test
+
+test:
+  tags:
+  - node-10.15.3
+  script:
+    - which node
+    - node -v
+  stage: test
+  only:
+    - master
+  except:
+    - tags
