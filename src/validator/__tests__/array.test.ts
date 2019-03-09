@@ -8,38 +8,26 @@ describe('validator: array', () => {
 		});
 
 		test('boolean', () => {
-			// @ts-ignore
 			expect(isArray(false)).toBeFalsy();
-			// @ts-ignore
 			expect(isArray(true)).toBeFalsy();
 		});
 
 		test('number', () => {
-			// @ts-ignore
 			expect(isArray(123)).toBeFalsy();
-			// @ts-ignore
 			expect(isArray(0.3)).toBeFalsy();
-			// @ts-ignore
 			expect(isArray(10.31235)).toBeFalsy();
-			// @ts-ignore
 			expect(isArray(NaN)).toBeFalsy();
 		});
 
 		test('string', () => {
-			// @ts-ignore
 			expect(isArray('')).toBeFalsy();
-			// @ts-ignore
 			expect(isArray('abc')).toBeFalsy();
-			// @ts-ignore
 			expect(isArray(`${123}qwewer`)).toBeFalsy();
 		});
 
 		test('object', () => {
-			// @ts-ignore
 			expect(isArray({})).toBeFalsy();
-			// @ts-ignore
 			expect(isArray({ a: 1 })).toBeFalsy();
-			// @ts-ignore
 			expect(isArray({ a: 1, b: { c: 2 } })).toBeFalsy();
 		});
 
@@ -52,7 +40,6 @@ describe('validator: array', () => {
 
 	describe('isEmptyArray', () => {
 		test('undefined null', () => {
-			// @ts-ignore
 			expect(() => isEmptyArray()).toThrowError();
 			expect(() => isEmptyArray(undefined)).toThrowError();
 			expect(() => isEmptyArray(null)).toThrowError();

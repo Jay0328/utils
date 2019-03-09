@@ -1,11 +1,19 @@
-export type IsArray = <T>(source: T[]) => source is T[];
-export const isArray: IsArray = <T>(source: T[]): source is T[] => Array.isArray(source);
+/**
+ * @module validator.array
+ */
 
-export type IsEmptyArray = <T>(source: T[]) => boolean;
-export const isEmptyArray: IsEmptyArray = <T>(source: T[]) => {
-	if (!isArray<T>(source)) {
-		throw new Error('source should be array.');
+/**
+ * native method
+ */
+export const isArray = Array.isArray;
+
+/**
+ * If argument is not `Array`, it will throw error.
+ */
+export function isEmptyArray(arg?: any[]): boolean {
+	if (!isArray(arg)) {
+		throw new Error('arg should be array.');
 	}
 
-	return source.length === 0;
-};
+	return arg.length === 0;
+}
