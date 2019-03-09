@@ -1,5 +1,5 @@
 /**
- * @module constants
+ * @module constant
  */
 
 /**
