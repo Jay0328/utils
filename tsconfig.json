@@ -14,5 +14,14 @@
 	"exclude": [
 		"node_modules",
 		"src/**/*.test.ts"
-	]
+	],
+	"typedocOptions": {
+		"mode": "modules",
+		"module": "commonjs",
+		"target": "ES6",
+		"out": "docs",
+		"exclude": [
+			"src/**/index.ts"
+		]
+	}
 }
