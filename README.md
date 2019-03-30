@@ -16,5 +16,9 @@ yarn add @jay19950328/utils
 
 ## Modules
 
+- comparator
 - constant
 - validator
+-	helper
+-	parser
+-	validator
