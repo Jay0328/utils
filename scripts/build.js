@@ -6,14 +6,23 @@ const { uglify } = require('rollup-plugin-uglify');
 const entries = require('./entries');
 
 const root = path.resolve(__dirname, '..');
+const onlyStripCommentsOptions = {
+	compress: false,
+	mangle: false,
+	output: {
+		comments: false,
+		beautify: true,
+	},
+};
 
-const buildES = async () => {
+const buildCommonJS = async () => {
 	const input = await entries();
 	const plugins = [
 		babel({
 			exclude: 'node_modules/**',
 			extensions: ['.ts', '.js']
-		})
+		}),
+		uglify(onlyStripCommentsOptions)
 	];
 	const external = Object
 		.entries(input)
@@ -29,7 +38,7 @@ const buildES = async () => {
 
 	await bundle.write({
 		dir,
-		format: 'es',
+		format: 'cjs',
 		sourcemap: false,
 		interop: false,
 	});
@@ -41,14 +50,7 @@ const buildUMD = async () => {
 	const buildConfigs = [
 		{
 			file: './umd/utils.development.js',
-			uglifyOptions: {
-				compress: false,
-				mangle: false,
-				output: {
-					comments: false,
-					beautify: true,
-				},
-			}
+			uglifyOptions: onlyStripCommentsOptions
 		},
 		{
 			file: './umd/utils.production.min.js',
@@ -73,7 +75,7 @@ const buildUMD = async () => {
 };
 
 const build = async () => await Promise.all([
-	buildES(),
+	buildCommonJS(),
 	buildUMD()
 ]);
 
