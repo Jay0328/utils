@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.0.0](https://github.com/Jay0328/utils/compare/v0.2.0-alpha.0...v1.0.0) (2019-03-30)
+
+
+### Build System
+
+* use es instead of commonjs ([98f800b](https://github.com/Jay0328/utils/commit/98f800b))
+
+
+### BREAKING CHANGES
+
+* no longer support commonjs
+
+
+
 # [0.2.0-alpha.0](https://gitlab.jay0328.me/root/utils/compare/v0.1.0...v0.2.0-alpha.0) (2019-03-17)
 
 
