@@ -4,10 +4,9 @@
 
 /**
  * get youtubeId from url.
- * @param arg url
  */
-export default function youtubeIdParser(arg: string): string {
-	const match = arg.match(
+export function parseYoutubeId(url: string): string {
+	const match = url.match(
 		/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/
 	);
 

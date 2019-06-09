@@ -5,9 +5,7 @@
 /**
  * interface of keycode.
  */
-export interface Keycode {
-	[keyName: string]: number;
-}
+export type Keycode = typeof keycode;
 
 /**
  * key of object is keyname.
@@ -22,7 +20,7 @@ export interface Keycode {
  * }
  * ```
  */
-const keycode: Keycode = {
+export const keycode = {
 	CANCEL: 3,
 	HELP: 6,
 	BACK_SPACE: 8,
@@ -143,5 +141,3 @@ const keycode: Keycode = {
 	QUOTE: 222,
 	CMD_FIREFOX: 224,
 };
-
-export default keycode;
