@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [2.0.0](https://github.com/Jay0328/utils/compare/v1.0.2...v2.0.0) (2019-06-09)
+
+
+### Bug Fixes
+
+* throw Error if types of arguments are invalid ([2adab66](https://github.com/Jay0328/utils/commit/2adab66))
+
+
+### Features
+
+* debounce ([87f7d5e](https://github.com/Jay0328/utils/commit/87f7d5e))
+* exhaust ([794bed9](https://github.com/Jay0328/utils/commit/794bed9))
+* throttle ([4f3dbd4](https://github.com/Jay0328/utils/commit/4f3dbd4))
+
+
+
 ## [1.0.2](https://github.com/Jay0328/utils/compare/v1.0.1...v1.0.2) (2019-03-30)
 
 
