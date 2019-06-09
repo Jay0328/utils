@@ -10,9 +10,11 @@ src/
 *.log
 .editorconfig
 .gitignore
+.gitlab-ci.yml
 .prettierignore
 .prettierrc
 babel.config.js
+gulpfile.js
 jest.config.json
 tsconfig.json
 tslint.json
