@@ -9,13 +9,25 @@ before_script:
   - which yarn
   - yarn --version
 
+cache:
+  paths:
+    - node_modules/
+
 stages:
+  - install_dependencies
   - test
   - publish
 
-test:
+install_dependencies:
   script:
     - yarn install
+  stage: install_dependencies
+  artifacts:
+    paths:
+      - node_modules/
+
+test:
+  script:
     - yarn run type:check
     - yarn run lint
     - yarn run test
@@ -26,7 +38,6 @@ test:
 
 publish:
   script:
-    - yarn install
     - yarn run build:remove
     - yarn run build
     - echo NPT_TOKEN is ${NPM_TOKEN}
