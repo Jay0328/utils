@@ -14,6 +14,7 @@ before_script:
   - yarn --version
 
 cache:
+  untracked: true
   paths:
     - node_modules/
 
@@ -26,9 +27,6 @@ install_dependencies:
   script:
     - yarn install
   stage: install_dependencies
-  artifacts:
-    paths:
-      - node_modules/
 
 test:
   script:
