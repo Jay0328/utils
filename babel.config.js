@@ -1,19 +1,13 @@
 module.exports = api => {
-	const test = api.env('test');
+	api.cache(true);
+
 	return {
 		presets: [
-			[
-				'@babel/preset-env',
-				{
-					loose: true,
-					useBuiltIns: 'entry',
-					modules: test ? 'commonjs' : false,
-				},
-			],
+			['@babel/preset-env', { loose: true }],
 			'@babel/preset-typescript',
 		],
 		plugins: [
-			'@babel/plugin-proposal-json-strings'
+			'@babel/plugin-transform-runtime'
 		],
 	};
 };

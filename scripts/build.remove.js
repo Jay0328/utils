@@ -4,7 +4,7 @@ const { exec } = require('child_process');
 const root = path.resolve(__dirname, '..');
 const src = path.resolve(root, 'src');
 
-const removeBuild = async () => {
+const removeES = async () => {
 	await Promise.all(
 		await fs
 			.readdirSync(path.resolve(src))
@@ -24,5 +24,9 @@ const removeBuild = async () => {
 			})
 	);
 };
+
+const removeBuild = async () => await Promise.all([
+	removeES(),
+]);
 
 removeBuild();

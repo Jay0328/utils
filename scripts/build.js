@@ -10,7 +10,8 @@ const buildES = async () => {
 	const plugins = [
 		babel({
 			exclude: 'node_modules/**',
-			extensions: ['.ts', '.js']
+			extensions: ['.ts', '.js'],
+			runtimeHelpers: true,
 		})
 	];
 	const external = Object
