@@ -1,8 +1,4 @@
 /**
- * @module validator
- */
-
-/**
  * validate a string is email or not.
  */
 export function isEmail(arg: string): boolean {

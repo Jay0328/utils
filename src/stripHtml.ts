@@ -1,8 +1,4 @@
 /**
- * @module formatter
- */
-
-/**
  * strip html by document.
  */
 export function stripHtml(html: string): string {

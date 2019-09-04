@@ -1,8 +1,4 @@
 /**
- * @module validator
- */
-
-/**
  * validate a string is url or not.
  */
 export function isUrl(arg: string): boolean {

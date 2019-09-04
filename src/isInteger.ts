@@ -1,8 +1,4 @@
 /**
- * @module validator
- */
-
-/**
  * @param arg argument will be tested if it is integer or not.
  * @param signs 
  */

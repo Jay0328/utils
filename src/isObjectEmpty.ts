@@ -1,6 +1,3 @@
-/**
- * @module validator
- */
 import { isObject } from './isObject';
 
 export function isObjectEmpty(arg: object): boolean {

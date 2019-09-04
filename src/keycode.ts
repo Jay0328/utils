@@ -1,8 +1,4 @@
 /**
- * @module constant
- */
-
-/**
  * interface of keycode.
  */
 export type Keycode = typeof keycode;

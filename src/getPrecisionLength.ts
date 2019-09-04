@@ -1,8 +1,4 @@
 /**
- * @module helper
- */
-
-/**
  * get length of precisions
  * 
  * ```ts

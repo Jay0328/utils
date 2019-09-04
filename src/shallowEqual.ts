@@ -1,8 +1,4 @@
 /**
- * @module comparator
- */
-
-/**
  * This is Copy from https://github.com/facebook/react/blob/master/packages/shared/shallowEqual.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.

@@ -1,8 +1,4 @@
 /**
- * @module parser
- */
-
-/**
  * get youtubeId from url.
  */
 export function parseYoutubeId(url: string): string {

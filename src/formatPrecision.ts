@@ -1,8 +1,4 @@
 /**
- * @module helper
- */
-
-/**
  * @param arg source number.
  * @param precisions length of precisions.
  * 

@@ -1,8 +1,4 @@
 /**
- * @module decorator
- */
-
-/**
  * Add throttle to a function.
  * 
  * @typeparam T type or interface of origin function.
