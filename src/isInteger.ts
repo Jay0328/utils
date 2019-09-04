@@ -7,5 +7,5 @@
  * @param signs 
  */
 export function isInteger(arg: number | string, signs: '+-' | '+' | '-' = '+-'): boolean {
-	return new RegExp(`^(0|[${signs}]?[1-9]\\d*)$`).test(`${arg}`);
+  return new RegExp(`^(0|[${signs}]?[1-9]\\d*)$`).test(`${arg}`);
 }

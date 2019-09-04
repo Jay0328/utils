@@ -10,11 +10,11 @@
  * ```
  */
 export function getPrecisionLength(arg: number): number {
-	const precisions = `${arg}`.split('.')[1];
+  const precisions = `${arg}`.split('.')[1];
 
-	if (precisions === undefined) {
-		return 0;
-	}
+  if (precisions === undefined) {
+    return 0;
+  }
 
-	return precisions.length;
+  return precisions.length;
 }

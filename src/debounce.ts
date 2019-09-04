@@ -27,13 +27,13 @@
  * ```
  */
 export function debounce<T extends (...args: any[]) => any>(time: number) {
-	return (fn: T) => {
-		let timer: number | NodeJS.Timeout;
-		return function (...args: Parameters<T>): any {
-			// @ts-ignore
-			const context = this;
-			clearTimeout(timer as number);
-			timer = setTimeout(fn.bind(context, ...args), time);
-		};
-	};
+  return (fn: T) => {
+    let timer: number | NodeJS.Timeout;
+    return function (...args: Parameters<T>): any {
+      // @ts-ignore
+      const context = this;
+      clearTimeout(timer as number);
+      timer = setTimeout(fn.bind(context, ...args), time);
+    };
+  };
 }

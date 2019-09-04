@@ -27,18 +27,18 @@
  * ```
  */
 export function throttle<T extends (...args: any[]) => any>(time: number) {
-	return (fn: T) => {
-		let previous: number;
+  return (fn: T) => {
+    let previous: number;
 
-		return function (...args: Parameters<T>): any {
-			// @ts-ignore
-			const context = this;
-			const now = +(new Date());
+    return function (...args: Parameters<T>): any {
+      // @ts-ignore
+      const context = this;
+      const now = +(new Date());
 
-			if (!previous || (now - previous) > time) {
-				fn.apply(context, args);
-				previous = now;
-			}
-		};
-	};
+      if (!previous || (now - previous) > time) {
+        fn.apply(context, args);
+        previous = now;
+      }
+    };
+  };
 }

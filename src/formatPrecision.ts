@@ -11,6 +11,6 @@
  * ```
  */
 export function formatPrecision(arg: number, precisions: number): number {
-	const size = 10 ** precisions;
-	return Math.round(arg * size) / size;
+  const size = 10 ** precisions;
+  return Math.round(arg * size) / size;
 }

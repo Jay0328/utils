@@ -27,25 +27,25 @@
  * ```
  */
 export function exhaust<T extends (...args: any[]) => any>(time: number) {
-	return (fn: T) => {
-		let done = true;
-		let timer: number | NodeJS.Timeout;
+  return (fn: T) => {
+    let done = true;
+    let timer: number | NodeJS.Timeout;
 
-		return function (...args: Parameters<T>): any {
-			// @ts-ignore
-			const context = this;
-			if (done) {
-				fn.apply(context, args);
-				done = false;
-			}
+    return function (...args: Parameters<T>): any {
+      // @ts-ignore
+      const context = this;
+      if (done) {
+        fn.apply(context, args);
+        done = false;
+      }
 
-			if (timer) {
-				clearTimeout(timer as number);
-			}
+      if (timer) {
+        clearTimeout(timer as number);
+      }
 
-			timer = setTimeout(() => {
-				done = true;
-			}, time);
-		};
-	};
+      timer = setTimeout(() => {
+        done = true;
+      }, time);
+    };
+  };
 }

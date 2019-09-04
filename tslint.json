@@ -10,7 +10,7 @@
 		],
 		"indent": [
 			true,
-			"tabs",
+			"space",
 			2
 		],
 		"interface-name": false,
