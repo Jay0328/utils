@@ -4,7 +4,9 @@ describe('isArrayEmpty', () => {
   test('undefined null', () => {
     // @ts-ignore
     expect(() => isArrayEmpty()).toThrowError();
+    // @ts-ignore
     expect(() => isArrayEmpty(undefined)).toThrowError();
+    // @ts-ignore
     expect(() => isArrayEmpty(null)).toThrowError();
   });
 

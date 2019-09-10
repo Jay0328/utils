@@ -2,7 +2,9 @@ import { formatPrecision } from '../formatPrecision';
 
 describe('formatPrecision', () => {
 	test('number or precisions not number', () => {
+		// @ts-ignore
 		expect(formatPrecision(undefined, 1)).toBe(NaN);
+		// @ts-ignore
 		expect(formatPrecision(2, null)).toBe(NaN);
 		// @ts-ignore
 		expect(formatPrecision(false, 1)).toBe(NaN);

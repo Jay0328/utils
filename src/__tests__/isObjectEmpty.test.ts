@@ -4,7 +4,9 @@ describe('isObjectEmpty', () => {
   test('undefined null', () => {
     //	@ts-ignore
     expect(() => isObjectEmpty()).toThrowError();
+    //	@ts-ignore
     expect(() => isObjectEmpty(undefined)).toThrowError();
+    //	@ts-ignore
     expect(() => isObjectEmpty(null)).toThrowError();
   });
 
