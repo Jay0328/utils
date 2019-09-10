@@ -5,16 +5,8 @@
 		"strict": true,
 		"esModuleInterop": true,
 		"noImplicitAny": true,
-		"experimentalDecorators": true,
-		"noEmit": true
+		"experimentalDecorators": true
 	},
-	"include": [
-		"src"
-	],
-	"exclude": [
-		"node_modules",
-		"src/**/*.test.ts"
-	],
 	"typedocOptions": {
 		"mode": "modules",
 		"module": "commonjs",

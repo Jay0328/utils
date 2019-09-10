@@ -29,8 +29,8 @@
   },
   "sideEffects": false,
   "scripts": {
-    "type:check": "tsc",
-    "type:declaration": "tsc --noEmit false --emitDeclarationOnly --declaration --declarationDir ./",
+    "type:check": "tsc --project tsconfig.test.json",
+    "type:declaration": "tsc --project tsconfig.app.json",
     "lint": "tslint --config tslint.json --exclude '**/__tests__/**/*' 'src/**/*.ts'",
     "test": "jest --coverage --config=jest.config.json",
     "doc": "gulp",
@@ -44,6 +44,8 @@
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-typescript": "^7.3.3",
@@ -63,5 +65,8 @@
     "typedoc": "^0.15.0",
     "typedoc-plugin-external-module-name": "^2.1.0",
     "typescript": "^3.6.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.0"
   }
 }
