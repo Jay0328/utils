@@ -1,35 +1,26 @@
 /**
- * Add exhaust to a function.
+ * A factory to create exhausted function.
  * 
- * @typeparam T type or interface of origin function.
+ * @typeparam F type or interface of origin function.
+ * 
  * @param time debounce time.
- * @returns The behavior is the same as origin function, but with exhaust.
  * 
- * ```ts
+ * @returns The behavior is the same as origin function, but exhausted.
+ * 
+ * @example
+ * 
  * const origin = () => ...;
  * const result = exhaust(250)(origin);
- * ```
- * 
- * ```ts
- * class Greeter {
- * 	greeting: string;
- * 	constructor(message: string) {
- * 		this.greeting = message;
- * 	}
- * 
- * 	@exhaust(500)
- * 	greet = () => `Hello, ${this.greeting}`;
- * }
- * ```
  */
-export function exhaust<T extends (...args: any[]) => any>(time: number) {
-  return (fn: T) => {
+export function exhaust(time: number) {
+  return <F extends (...args: any[]) => void>(fn: F) => {
     let done = true;
     let timer: number | NodeJS.Timeout;
 
-    return function (...args: Parameters<T>): any {
+    return function (...args: Parameters<F>): void {
       // @ts-ignore
       const context = this;
+
       if (done) {
         fn.apply(context, args);
         done = false;
@@ -43,5 +34,42 @@ export function exhaust<T extends (...args: any[]) => any>(time: number) {
         done = true;
       }, time);
     };
+  };
+}
+
+/**
+ * A decorator to create exhausted instance method.
+ * 
+ * @typeparam F type or interface of origin function.
+ * 
+ * @param time debounce time.
+ * 
+ * @returns The behavior is the same as origin function, but exhausted.
+ * 
+ * @example
+ * 
+ * class Greeter {
+ * 	greeting: string;
+ * 	constructor(message: string) {
+ * 		this.greeting = message;
+ * 	}
+ * 
+ * 	@Exhaust(500)
+ * 	greet = () => `Hello, ${this.greeting}`;
+ * }
+ */
+export function Exhaust(time: number) {
+  return function <F extends (...args: any[]) => void>(
+    target: any,
+    propertyKey: string,
+    descriptor: TypedPropertyDescriptor<F>
+  ) {
+    const originalMethod = descriptor.value;
+
+    if (originalMethod) {
+      descriptor.value = exhaust(time)(originalMethod) as F;
+    }
+
+    return descriptor;
   };
 }
