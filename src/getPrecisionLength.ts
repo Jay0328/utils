@@ -5,8 +5,12 @@
  * getPrecisionLength(1.123) === 3
  * ```
  */
-export function getPrecisionLength(arg: number): number {
-  const precisions = `${arg}`.split('.')[1];
+export function getPrecisionLength(num: number): number {
+  if (typeof num !== 'number') {
+    throw new Error('Parameter should be number.');
+  }
+
+  const [, precisions] = `${num}`.split('.');
 
   if (precisions === undefined) {
     return 0;
