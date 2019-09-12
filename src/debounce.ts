@@ -1,14 +1,16 @@
 /**
- * Add debounce to a function.
+ * A factory to create debounced function.
  * 
  * @typeparam F type or interface of origin function.
- * @param time debounce time.
- * @returns The behavior is the same as origin function, but with debounce.
  * 
- * ```ts
+ * @param time debounce time.
+ * 
+ * @returns The behavior is the same as origin function, but debounced.
+ * 
+ * @example
+ * 
  * const origin = () => ...;
  * const result = debounce(250)(origin);
- * ```
  */
 export function debounce(time: number) {
   return <F extends (...args: any[]) => void>(fn: F) => {
@@ -23,13 +25,16 @@ export function debounce(time: number) {
 }
 
 /**
- * Add debounce to a function.
+ * A decorator to create debounced instance method.
  * 
  * @typeparam F type or interface of origin function.
- * @param time debounce time.
- * @returns The behavior is the same as origin function, but with debounce.
  * 
- * ```ts
+ * @param time debounce time.
+ * 
+ * @returns The behavior is the same as origin function, but debounced.
+ * 
+ * @example
+ * 
  * class Greeter {
  * 	greeting: string;
  * 
@@ -42,7 +47,6 @@ export function debounce(time: number) {
  *    console.log(`Hello, ${this.greeting}`);
  *  }
  * }
- * ```
  */
 export function Debounce(time: number) {
   return function <F extends (...args: any[]) => void>(
