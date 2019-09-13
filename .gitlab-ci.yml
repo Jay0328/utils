@@ -22,6 +22,7 @@ stages:
   - install_dependencies
   - test
   - publish
+  - pages
 
 install_dependencies:
   script:
@@ -49,3 +50,14 @@ publish:
   stage: publish
   only:
     - tags
+
+pages:
+  script:
+    - yarn run build:doc
+    - mv docs public
+  stage: pages
+  only:
+    - tags
+  artifacts:
+    paths:
+      - public
