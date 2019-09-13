@@ -1,6 +1,21 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.1.0](https://github.com/Jay0328/utils/compare/v2.0.0...v2.1.0) (2019-09-13)
+
+
+### Bug Fixes
+
+* return NaN if any parameter in formatPrecision is not number ([2ba778e](https://github.com/Jay0328/utils/commit/2ba778e))
+
+
+### Features
+
+* calculateNumber ([bb6596d](https://github.com/Jay0328/utils/commit/bb6596d))
+* debounce factory and Debounce decorator ([92b1ea5](https://github.com/Jay0328/utils/commit/92b1ea5))
+* exhaust factory and Exhaut decorator ([d049529](https://github.com/Jay0328/utils/commit/d049529))
+* throttle factory and Throttle decorator ([08cc9fb](https://github.com/Jay0328/utils/commit/08cc9fb))
 
 # [2.0.0](https://github.com/Jay0328/utils/compare/v1.0.2...v2.0.0) (2019-06-09)
 
