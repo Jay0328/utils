@@ -28,6 +28,9 @@ install_dependencies:
   script:
     - yarn install
   stage: install_dependencies
+  only:
+    - develop
+    - tags
 
 test:
   script:
