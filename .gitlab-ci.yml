@@ -57,8 +57,9 @@ publish:
 pages:
   script:
     - yarn run build:doc
+    - rm -rf public
     - mv docs public
-    - ls -al
+    - ls -al public
   stage: deploy
   only:
     - tags
