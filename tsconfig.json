@@ -13,7 +13,7 @@
 		"target": "ES6",
 		"out": "docs",
 		"exclude": [
-			"src/**/index.ts"
+			"src/**/*.test.ts"
 		]
 	}
 }
