@@ -2,23 +2,12 @@
 
 ## Getting Started
 
-#### Installation
+### Installation
 
-```
-npm install @jay19950328/utils --save
-```
+```bash
+npm install @jjaayy/utils --save
 
 or
 
+yarn add @jjaayy/utils
 ```
-yarn add @jay19950328/utils
-```
-
-## Modules
-
-- comparator
-- constant
-- validator
--	helper
--	parser
--	validator
